@@ -9,8 +9,15 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps(['id'])
+<script>
+export default {
+  props: {
+    id: {
+      type: String,
+      default: ''
+    }
+  }
+}
 </script>
 
 <style>
