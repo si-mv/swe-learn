@@ -9,12 +9,12 @@
     </main>
     <article>
       <nav>
-        <i class="material-icons">menu</i>
         <h4 style="margin-right: 1em;"><RouterLink to="/">Home </RouterLink></h4>
         <h4 style="margin-right: 1em;"><RouterLink to="/learn/bootcamp/sequelize">Sequelize</RouterLink></h4>
         <h4 style="margin-right: 1em;"><RouterLink to="/learn/bootcamp/objects">Objects</RouterLink></h4>
         <h4 style="margin-right: 1em;"><RouterLink to="/learn/bootcamp/callbacks">Callbacks</RouterLink></h4>
         <h4 style="margin-right: 1em;">{{ frontmatter.title }}</h4>
+        <i class="material-icons">menu</i>
       </nav>
       <Vimeo v-if="frontmatter.video" class="vimeo" :id="frontmatter.video"/>
       <section class="prose">
@@ -65,8 +65,7 @@ nav {
   display: flex;
   align-items: center;
   position: fixed;
-  background: #0f2139;
-  box-shadow: 0 4px 4px -4px black;
+  background: #202327;
 }
 
 .lesson-wrapper {
@@ -76,7 +75,7 @@ nav {
   height: 100%;
   padding: 0px;
   margin: 0px;
-  background: #0f2139;
+  background: #15181e;
 
 }
 
@@ -88,6 +87,8 @@ nav {
   padding: 0em 3em;
   padding-bottom: 3em;
   font-size: 16px;
+  border-left: 1px solid #2e3138;
+  overflow: hidden;
 }
 
 h1 {
