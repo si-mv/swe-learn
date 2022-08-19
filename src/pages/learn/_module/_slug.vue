@@ -10,7 +10,11 @@
     <article>
       <nav>
         <i class="material-icons">menu</i>
-        <h4>{{ frontmatter.title }}</h4>
+        <h4 style="margin-right: 1em;"><RouterLink to="/">Home </RouterLink></h4>
+        <h4 style="margin-right: 1em;"><RouterLink to="/learn/bootcamp/sequelize">Sequelize</RouterLink></h4>
+        <h4 style="margin-right: 1em;"><RouterLink to="/learn/bootcamp/objects">Objects</RouterLink></h4>
+        <h4 style="margin-right: 1em;"><RouterLink to="/learn/bootcamp/callbacks">Callbacks</RouterLink></h4>
+        <h4 style="margin-right: 1em;">{{ frontmatter.title }}</h4>
       </nav>
       <Vimeo v-if="frontmatter.video" class="vimeo" :id="frontmatter.video"/>
       <section class="prose">
