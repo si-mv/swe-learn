@@ -7,20 +7,22 @@
         :view="frontmatter.view"
       />
     </main>
-    <article>
+    <div class="content-wrapper">
       <nav>
-        <h4 style="margin-right: 1em;"><RouterLink to="/">Home </RouterLink></h4>
-        <h4 style="margin-right: 1em;"><RouterLink to="/learn/bootcamp/sequelize">Sequelize</RouterLink></h4>
-        <h4 style="margin-right: 1em;"><RouterLink to="/learn/bootcamp/objects">Objects</RouterLink></h4>
-        <h4 style="margin-right: 1em;"><RouterLink to="/learn/bootcamp/callbacks">Callbacks</RouterLink></h4>
-        <h4 style="margin-right: 1em;">{{ frontmatter.title }}</h4>
-        <i class="material-icons">menu</i>
+        <i class="material-icons nav-btn">chevron_left</i>
+        <span>{{ frontmatter.title }}</span>
+        <i class="material-icons nav-btn">chevron_right</i>
+        <i class="material-icons nav-menu">menu_open</i>
       </nav>
-      <Vimeo v-if="frontmatter.video" class="vimeo" :id="frontmatter.video"/>
-      <section class="prose">
-        <component :is="content" />
-      </section>
-    </article>
+      <article>
+        <div>
+          <Vimeo v-if="frontmatter.video" class="vimeo" :id="frontmatter.video"/>
+        </div>
+        <section class="prose">
+          <component :is="content" />
+        </section>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -58,16 +60,6 @@ export default {
 
 <style>
 
-nav {
-  height: 38px;
-  width: 100%;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  background: #202327;
-}
-
 .lesson-wrapper {
   display: grid;
   grid-template-columns: 1fr min-content;
@@ -76,18 +68,49 @@ nav {
   padding: 0px;
   margin: 0px;
   background: #15181e;
-
 }
 
-.vimeo {
-  margin-top: 38px;
+main {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.content-wrapper {
+  width: 40vw;
+  min-width: 250px;
+  max-width: 50vw;
+}
+
+nav {
+  height: 38px;
+  width: 100%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  background: #202327;
+}
+
+.nav-menu {
+  margin-left: auto;
+}
+
+.nav-btn {
+  cursor: pointer;
+}
+
+article {
+  overflow: auto;
+  display: block;
+  background: #15181e;
+  height: calc(100vh - 38px);
 }
 
 .prose {
   padding: 0em 3em;
   padding-bottom: 3em;
   font-size: 16px;
-  border-left: 1px solid #2e3138;
+  border-left: 0.5px solid #2e3138;
   overflow: hidden;
 }
 
@@ -98,19 +121,6 @@ h1 {
 
 p, ul, ol {
   line-height: 1.5;
-}
-
-article {
-  overflow: auto;
-  width: 40vw;
-  min-width: 250px;
-  max-width: 50vw;
-}
-
-main {
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
 }
 
 </style>

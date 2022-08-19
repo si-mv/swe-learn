@@ -31,7 +31,7 @@ p > code {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -39,8 +39,7 @@ p > code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #aeb5b8;
-  border-radius: 20px;
+  background-color: #2e3138;
 }
 
 i {
